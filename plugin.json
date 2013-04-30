@@ -11,7 +11,7 @@
 	"data": {
 		"shortname": {
 			"label": "Disqus Shortname",
-			"info": "You can find your shortname by signing-in into disqus.com and clicking 'Dashboard' at the top. Shortnames are displayed in parenthesis underneath your registered sites in the left column.",
+			"info": "You can find your shortname by signing-in to disqus.com and clicking 'Dashboard' at the top. Shortnames are displayed in parenthesis underneath your registered sites in the left column.",
 			"type": "string",
 			"validation": {
 				"type": "not_empty",
