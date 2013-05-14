@@ -18,13 +18,37 @@ class KokenDisqus extends KokenPlugin {
 	{
 		echo <<<OUT
 <script type="text/javascript">
-	$(function() {
-		if ($('#disqus_thread').length) {
-			var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-			dsq.src = 'http://{$this->data->shortname}.disqus.com/embed.js';
-			(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	(function() {
+		var disqus = function() {
+			if ($('#disqus_thread').length) {
+				(function() {
+					var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+					dsq.src = 'http://{$this->data->shortname}.disqus.com/embed.js';
+					(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+				})();
+			}
 		}
-	});
+
+		$(function() {
+			if ($.pjax) {
+				$(document).on('pjax.success', function() {
+					window.setTimeout(function() {
+						if (window.DISQUS && $('#disqus_thread').length) {
+							window.DISQUS.reset({
+								reload: true,
+								config: function() {
+									this.page.url = window.location.href;
+								}
+							});
+						} else {
+							disqus();
+						}
+					}, 250)
+				});
+			}
+			disqus();
+		});
+	}());
 </script>
 OUT;
 
