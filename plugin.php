@@ -13,7 +13,6 @@ class KokenDisqus extends KokenPlugin {
 	function render_div($item)
 	{
 		echo '<script>var disqus_identifier = "koken_disqus_' . $item['__koken__'] . '_' . $item['id'] . '";</script><div id="disqus_thread"></div>';
-
 	}
 
 	function render_count_div($item)
