@@ -12,13 +12,13 @@ class KokenDisqus extends KokenPlugin {
 
 	function render_div($item)
 	{
-		echo '<script>var disqus_identifier = "koken-disqus-' . $item['id'] . '";</script><div id="disqus_thread"></div>';
+		echo '<script>var disqus_identifier = "koken_disqus_' . $item['__koken__'] . '_' . $item['id'] . '";</script><div id="disqus_thread"></div>';
 
 	}
 
 	function render_count_div($item)
 	{
-		echo '<a href="' . $item['url'] . '#disqus_thread" data-disqus-identifier="koken-disqus-' . $item['id'] . '"></a>';
+		echo '<a href="' . $item['url'] . '#disqus_thread" data-disqus-identifier="koken_disqus_' . $item['__koken__'] . '_' . $item['id'] . '"></a>';
 	}
 
 	function render_js()
