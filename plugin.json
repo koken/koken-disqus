@@ -8,6 +8,8 @@
 		"link": "http://koken.me"
 	},
 
+	"koken_version_required": "0.10.0",
+
 	"data": {
 		"shortname": {
 			"label": "Disqus Shortname",
