@@ -8,7 +8,7 @@
 		"link": "http://koken.me"
 	},
 
-	"koken_version_required": "0.10.0",
+	"koken_version_required": "0.10.0-beta.1",
 
 	"data": {
 		"shortname": {
