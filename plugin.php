@@ -44,7 +44,7 @@ class KokenDisqus extends KokenPlugin {
 
 		$(function() {
 			if ($.pjax) {
-				$(document).on('pjax.success', function() {
+				$(document).on('pjax:success pjax:end', function() {
 					window.setTimeout(function() {
 						if (window.DISQUS && $('#disqus_thread').length) {
 							window.DISQUS.reset({
