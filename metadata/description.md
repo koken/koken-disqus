@@ -1,0 +1,3 @@
+This plugin enables community comments on your Koken site using [Disqus](http://disqus.com/), the popular third-party discussion platform used by sites everywhere. Once activated, Disqus-powered comments will automatically appear underneath essays and (in some themes) content pages as well. The plugin also enables the display of comment counts on essay indexes so site visitors can see the number of comments each essay has received.
+
+Disqus comments automatically match the color scheme of your chosen theme. You can override this and make further customizations through your Disqus account page once the plugin has been enabled.
