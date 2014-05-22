@@ -28,17 +28,10 @@ class KokenDisqus extends KokenPlugin {
 	(function() {
 		var disqus = function() {
 			if ($('#disqus_thread').length) {
-				(function() {
-					var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-					dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-					(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-				})();
+				$.getScript ("http://" + disqus_shortname + ".disqus.com/embed.js");
 			} else if ($('[data-disqus-identifier]').length) {
-				(function() {
-					var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-					dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
-					(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-				})();
+				window.DISQUSWIDGETS = undefined;
+				$.getScript ("http://" + disqus_shortname + ".disqus.com/count.js");
 			}
 		}
 
