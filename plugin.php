@@ -28,10 +28,10 @@ class KokenDisqus extends KokenPlugin {
 	(function() {
 		var disqus = function() {
 			if ($('#disqus_thread').length) {
-				$.getScript ("http://" + disqus_shortname + ".disqus.com/embed.js");
+				$.getScript(location.protocol + '//' + disqus_shortname + '.disqus.com/embed.js');
 			} else if ($('[data-disqus-identifier]').length) {
 				window.DISQUSWIDGETS = undefined;
-				$.getScript ("http://" + disqus_shortname + ".disqus.com/count.js");
+				$.getScript(location.protocol + '//' + disqus_shortname + '.disqus.com/count.js');
 			}
 		}
 
