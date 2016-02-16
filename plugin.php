@@ -29,7 +29,9 @@ class KokenDisqus extends KokenPlugin {
 		var disqus = function() {
 			if ($('#disqus_thread').length) {
 				$.getScript(location.protocol + '//' + disqus_shortname + '.disqus.com/embed.js');
-			} else if ($('[data-disqus-identifier]').length) {
+			}
+
+			if ($('[data-disqus-identifier]').length) {
 				window.DISQUSWIDGETS = undefined;
 				$.getScript(location.protocol + '//' + disqus_shortname + '.disqus.com/count.js');
 			}
